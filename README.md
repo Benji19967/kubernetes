@@ -1,2 +1,1 @@
-# kubernetes
-Kubernetes info and usage
+# Kubernetes
