@@ -1,5 +1,10 @@
 # Kubernetes
 
+## Nodes
+
+- Virtual or physical machine
+- Typically, several nodes make up a cluster
+
 ## Containers
 
 ### Images
@@ -9,7 +14,7 @@
 
 ## Workloads
 
-### Pods
+### Pods (Example: instance of a Feature Generator or a Server, ...)
 
 - Smallest deployable units of computing in Kubernetes
 - Created using a Deployment (or Job or StatefulSet)
@@ -20,7 +25,7 @@
 - Can mount (persistent) Volumes
 - Can have liveness and readiness probes
 
-### Deployments
+### Deployments (Example: Server, FG, Ingestion Service, ...)
 
 - Manages a set of pods to run a stateless application
 - Choose a desired state
@@ -29,13 +34,13 @@
 - Can rollback to a previous Deployment
 - Can be autoscaled
 
-### CronJobs
+### CronJobs (Example: Hourly Consolidation Service)
 
-### HPA
+### HPA (Example: Ingestion Service, FGs)
 
 ## Storage
 
-### secret
+### secret (Example: GCP key)
 
 ### persistent volumnes
 
@@ -43,14 +48,22 @@
 
 ## Services
 
-### Service
+### Service (Example: Server)
+
+- Helps you expose groups of Pods over a Network
+
+- Pods have their own IP 
+- Pods run and die, how does a frontend know which IP to hit? --> Come in Services
+- Usually cluster internal (use Ingress to expose to the outside world)
 
 ## Configs
 
-### configMap
+### configMap (Example: number of threads to use, any application configs)
 
-### Liveness and Readiness Probes
+- Do not need to redeploy Deployment, only update configMap and restart Deployment
 
-### Requests and Limits
+### Liveness and Readiness Probes (Example: Server http check)
+
+### Requests and Limits (Example: FGs, Ingestion, Server, ...)
 
 cpu, memory
