@@ -4,11 +4,24 @@
 
 ### Images
 
+- For containers
+- Stored in a registry (Artifactory, GitLab)
+
 ## Workloads
 
 ### Pods
 
+- Usually contains one container
+- Restarts on crashes
+
 ### Deployments
+
+- Manages a set of pods to run a stateless application
+- Choose a desired state
+  - image to run for each pod
+  - how many replicas to run
+- Can rollback to a previous Deployment
+- Can be autoscaled
 
 ### CronJobs
 
