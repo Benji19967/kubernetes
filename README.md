@@ -42,7 +42,7 @@
 
 ### secret (Example: GCP key)
 
-### persistent volumnes
+### persistent volumnes (Example: FG models)
 
 ### ephemeral storage
 
